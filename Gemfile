@@ -14,13 +14,13 @@ gem 'puma', '~> 5.0'
 
 gem 'activeadmin'
 gem 'activestorage'
+gem 'chartkick'
 gem 'delayed_job_active_record'
+gem 'devise'
+gem 'google-cloud-storage', '~> 1.11', require: false
+gem 'groupdate'
 gem 'image_magick'
 gem 'image_processing', '>= 1.2'
-gem 'google-cloud-storage', '~> 1.11', require: false
-gem 'chartkick'
-gem 'devise'
-gem 'groupdate'
 gem 'simple-form-datepicker'
 
 # Use SCSS for stylesheets
@@ -34,9 +34,11 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
+gem 'listen', '~> 3.3'
+gem 'net-smtp', require: false
 gem 'rack-attack'
 gem 'ransack'
-gem 'net-smtp', require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
