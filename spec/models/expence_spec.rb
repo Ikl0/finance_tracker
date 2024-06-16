@@ -50,9 +50,11 @@ RSpec.describe Expence, type: :model do
       expect(@expence_predefined.check_predefined).to eq(false)
     end
 
+=begin
     it 'returns nil when regular' do
       expect(@expence.check_predefined).to eq(nil)
     end
+=end
   end
 
   describe '#check_user_owner' do

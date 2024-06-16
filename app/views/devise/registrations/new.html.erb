@@ -9,11 +9,11 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field form-group">
-          <%= f.text_field :name, class:"form-control", placeholder: "Name", autofocus: true, autocomplete: "name" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true, autocomplete: "name" %>
         </div>
 
       <div class="field form-group">
-        <%= f.text_field :surname, class:"form-control", placeholder: "Surname", autofocus: true, autocomplete: "surname" %>
+        <%= f.text_field :surname, class: "form-control", placeholder: "Surname", autofocus: true, autocomplete: "surname" %>
       </div>
 
       <div class="form-group">
@@ -26,7 +26,7 @@
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, class:"form-control", placeholder: "Password", autocomplete: "new-password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
       </div>
 
       <div class="form-group">

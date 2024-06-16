@@ -71,7 +71,7 @@ RSpec.describe OperationsController, type: :controller do
     it 'get correct heading' do
       sign_in user
       get :edit, params: { id: operation }
-      expect(response.body).to match(/<h1>Editing Operation/)
+      expect(response.body).to match(/<h4>Edit Operation<\/h4>/)
     end
     it 'stay the same page after adding row with amount' do
       pending 'Not yet implemented ...'

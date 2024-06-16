@@ -24,14 +24,12 @@ RSpec.describe OperationDetailsController, type: :controller do
     #   expect(response).to render_template('welcome/index')
     # end
     it 'status ok for own page' do
-      pending 'Not yet implemented ...'
       sign_in user
       get :show, params: { id: operation_detail }
       redirect_to("/operation_details/#{assigns(:operation_detail).id}")
     end
     describe '#edit' do
       it 'status ok for own page' do
-        pending 'Not yet implemented ...'
         sign_in user
         get :edit, params: { id: operation_detail }
         expect(response).to have_http_status(:ok)

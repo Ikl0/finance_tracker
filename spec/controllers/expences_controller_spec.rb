@@ -20,7 +20,7 @@ RSpec.describe ExpencesController, type: :controller do
     end
     it 'return correct expences count' do
       user2 = FactoryBot.create(:user, id: 2, name: 'Petr', surname: 'Petrov', email: 'aaa@aaddd.com')
-      expence = FactoryBot.create(:expence, user_id: user.id)
+      expence = FactoryBot.create(:expence, user_id: user.id, id: 33)
       expence2 = FactoryBot.create(:expence, user_id: user2.id, id: 22)
       expence_predefined = FactoryBot.create(:expence, user_id: user2.id, id: 23, predefined: true)
       expences_count = Expence.count
@@ -97,7 +97,7 @@ RSpec.describe ExpencesController, type: :controller do
   describe '#destroy' do
     before { expence }
     it 'deletes non predefined item' do
-      expence = FactoryBot.create(:expence, user_id: user.id)
+      #expence = FactoryBot.create(:expence, user_id: user.id)
 
       expect do
         expence.destroy
