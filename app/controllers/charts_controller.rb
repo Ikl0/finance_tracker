@@ -13,7 +13,7 @@ class ChartsController < ApplicationController
     dates_and_params(params_hash)
     set_members
     set_chart_data
-    render 'charts/index'
+    #render 'charts/index' and return
   end
 
   private
