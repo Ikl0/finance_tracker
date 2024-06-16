@@ -31,8 +31,8 @@
 
 /public/assets
 /public/recordings
-/public/packs
-/public/packs-test
+/public/packs/js
+/public/packs-test/js
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
