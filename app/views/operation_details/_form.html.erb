@@ -4,7 +4,7 @@
     <% if @income.present? %>
       <%= f.select :income_id, options_for_select(@incomes.map{ |c| [c.name, c.id]}, @income.id) %>
       <% else %>
-  <%= f.select :expence_id, options_for_select(@expences.map{ |c| [c.name, c.id]}, @expence.id) %>
+      <%= f.select :expence_id, options_for_select(@expences.map{ |c| [c.name, c.id]}, @expence.id) %>
       <% end %>
       </div>
   <div class="mb-3">

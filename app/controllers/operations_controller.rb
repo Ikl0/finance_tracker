@@ -45,24 +45,24 @@ class OperationsController < ApplicationController
   # GET /operations/new
   def new
     @safari = request.env['HTTP_USER_AGENT'].scan('Safari').present?
-    @expences = Expence.where(predefined: true).or(Expence.with_user(current_user.id))
-    @incomes = Income.where(predefined: true).or(Income.with_user(current_user.id))
+    @expences = Expence.or(Expence.with_user(current_user.id))
+    @incomes = Income.or(Income.with_user(current_user.id))
     @operation = Operation.new
     @operation_type = params[:type] == 'income' ? 1 : 0
   end
 
   # GET /operations/1/edit
   def edit
-    @expences = Expence.where(predefined: true).or(Expence.with_family(current_user.family_id))
-    @incomes = Income.where(predefined: true).or(Income.with_family(current_user.family_id))
+    @expences = Expence.or(Expence.with_family(current_user.family_id))
+    @incomes = Income.or(Income.with_family(current_user.family_id))
     @operation_type = @operation.operation_type
   end
 
   # POST /operations or /operations.json
   def create
     @operation = Operation.new(operation_params)
-    @expences = Expence.where(predefined: true).or(Expence.with_family(current_user.family_id))
-    @incomes = Income.where(predefined: true).or(Income.with_family(current_user.family_id))
+    @expences = Expence.or(Expence.with_family(current_user.family_id))
+    @incomes = Income.or(Income.with_family(current_user.family_id))
 
     respond_to do |format|
       if @operation.save
