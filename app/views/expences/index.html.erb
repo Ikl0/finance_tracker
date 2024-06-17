@@ -20,11 +20,11 @@
         <tbody>
         <% @expences.each do |expence| %>
         <% if expence.predefined? %>
-          <tr class="text-success fw-bold">
+          <tr class="text-secondary fw-bold">
             <td><%= expence.name %></td>
             <td></td>
         <% else %>
-            <tr class="text-primary font-weight-normal">
+            <tr class="text-secondary font-weight-normal">
           <% end %>
           <% if not expence.predefined? %>
             <td><%= link_to expence.name, expence, style:'text-decoration:none' %></td>
@@ -34,5 +34,5 @@
         <% end %>
         </tbody>
       </table>
-  <%= link_to 'New Expence', new_expence_path, class:"btn btn-outline-info"%>
+  <%= link_to 'New Expence', new_expence_path, class:"btn btn-outline-primary"%>
 </div>
