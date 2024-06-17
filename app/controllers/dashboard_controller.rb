@@ -51,11 +51,11 @@ class DashboardController < ApplicationController
   def balance
     OperationDetail.joins(:operation).where(operation: { user_id: current_user.id })
                    .where(operation: { operation_type: 1 })
-                   .where('date  <= ?', Date.current.end_of_day)
+                   .where('date  <= ?', Date.current.end_of_month)
                    .sum(:amount) -
       OperationDetail.joins(:operation).where(operation: { user_id: current_user.id })
                      .where(operation: { operation_type: 0 })
-                     .where('date  <= ?', Date.current.end_of_day)
+                     .where('date  <= ?', Date.current.end_of_month)
                      .sum(:amount)
   end
 end
