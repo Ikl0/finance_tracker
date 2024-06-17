@@ -101,6 +101,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.3.4)
     declarative (0.0.20)
     delayed_job (4.1.10)
       activesupport (>= 3.0, < 8.0)
@@ -226,6 +227,11 @@ GEM
     minitest (5.15.0)
     msgpack (1.5.1)
     multi_json (1.15.0)
+    net-imap (0.4.13)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
     net-protocol (0.2.2)
       timeout
     net-smtp (0.5.0)
@@ -449,6 +455,8 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.3)
+  net-imap
+  net-pop
   net-smtp
   pg (~> 1.1)
   pry
