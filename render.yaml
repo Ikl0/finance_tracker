@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: finance_tracker
+    databaseName: finance_tracker
+    user: finance_tracker
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: finance_tracker
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
