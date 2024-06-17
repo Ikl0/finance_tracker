@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
     members = User.with_email(params[:invitation][:email])
     return redirect_to current_user, alert: 'Email does not exist!' if members.blank?
     return redirect_to current_user, alert: 'You can not invite yourself!' if members.first.email == current_user.email
-    return redirect_to current_user, alert: "User #{members.first.email} already in your family" if members.first.family_id == current_user.family_id
+    return redirect_to current_user, alert: "User #{members.first.email} already in your family" if members.first.family_id != nil && members.first.family_id == current_user.family_id
     return redirect_to current_user, alert: "User #{members.first.email} belongs to other family" if members.first.family_id.present? && members.first.family_id != current_user.family_id
     return redirect_to current_user, alert: 'Invitation was created before' if Invitation.find_invitation(current_user.id, members.first.id).present?
 
