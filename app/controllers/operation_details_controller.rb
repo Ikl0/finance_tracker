@@ -77,7 +77,7 @@ class OperationDetailsController < ApplicationController
   def operation_detail_params
     params.permit(:comment, :amount, :operation_id, :id, :expence_id, :user_id, :income_id, :operation_type,
                   :_method, :authenticity_token, :commit,
-                  operation_detail: %i[amount comment expence_id])
+                  operation_detail: %i[amount comment expence_id income_id])
   end
 
   def set_operation
