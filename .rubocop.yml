@@ -32,9 +32,6 @@ Metrics/BlockLength:
   Exclude:
     - config/initializers/secret_token.rb
 
-Style/IfUnlessModifier:
-  Enabled: false
-
 
 
 
