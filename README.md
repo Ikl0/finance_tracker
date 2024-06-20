@@ -1,14 +1,13 @@
 # Project
 
-[Finance_tracker](https://finance-tracker-team-c.herokuapp.com/)
-[GitHub](https://github.com/Shkuryn/finance_tracker)
+[Finance_tracker](https://finance-tracker-wuob.onrender.com/)
 
 ## Install
 
 ### Clone the repository
 
 ```shell
-git clone git@github.com:Shkuryn/finance_tracker.git
+git clone git@github.com:Ikl0/finance_tracker.git
 cd finance_tracker
 ```
 
@@ -18,12 +17,12 @@ cd finance_tracker
 ruby -v
 ```
 
-The ouput should start with something like `ruby 3.0.3`
+The required ruby version is '3.2.2'
 
 If not, install the right ruby version using [rvm](https://rvm.io/) (it could take a while):
 
 ```shell
-rvm install 3.0.3
+rvm install 3.2.2
 ```
 ### Install dependencies
 
@@ -47,13 +46,10 @@ install node.js
 rails db:create db:migrate db:seed
 ```
 
-### Add heroku remotes
-
-Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
+### Or just
 
 ```shell
-heroku git:remote -a finance_tracker
-heroku git:remote --remote heroku-staging -a finance_tracker-staging
+rails db:setup
 ```
 
 ## Serve
@@ -61,28 +57,3 @@ heroku git:remote --remote heroku-staging -a finance_tracker-staging
 ```shell
 rails s
 ```
-
-## Deploy
-
-### With Heroku pipeline (recommended)
-
-Push to Heroku staging remote:
-
-```shell
-git push heroku-staging
-```
-
-Go to the Heroku Dashboard and [promote the app to production](https://devcenter.heroku.com/articles/pipelines) or use Heroku CLI:
-
-```shell
-heroku pipelines:promote -a finance_tracker-staging
-```
-
-### Directly to production (not recommended)
-
-Push to Heroku production remote:
-
-```shell
-git push heroku
-```
-
