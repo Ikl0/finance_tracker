@@ -52,7 +52,7 @@ rails db:create db:migrate db:seed
 rails db:setup
 ```
 
-## Serve
+## Now start the server
 
 ```shell
 rails s

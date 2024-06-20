@@ -27,8 +27,8 @@
     <button
       class="navbar-toggler"
       type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarButtonsExample"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarButtonsExample"
       aria-controls="navbarButtonsExample"
       aria-expanded="false"
       aria-label="Toggle navigation"
@@ -39,6 +39,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarButtonsExample">
       <!-- Left links -->
+      <% if user_signed_in? %>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="/dashboard/show">Dashboard</a>
@@ -55,15 +56,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/planned_expences">Planned Expences</a>
         </li>
-<!--        <li class="nav-item">-->
-<!--           <a class="nav-link"-->
-          <%#= link_to 'Reports', charts_show_path %>
-<!--          </a>-->
-<!--         </li>-->
+        <!--        <li class="nav-item">-->
+        <!--           <a class="nav-link"-->
+        <%#= link_to 'Reports', charts_show_path %>
+        <!--          </a>-->
+        <!--         </li>-->
       </ul>
       <!-- Left links -->
       <div class="d-flex align-items-center">
-        <% if user_signed_in? %>
+
           <span class="navbar-text" style="margin-right: 15px">Hi, <%= username(current_user.id)%>!</span>
 
           <button type="button" class="btn btn-info me-3" >
@@ -75,16 +76,16 @@
 
 
 
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete,
-                    data: { confirm: 'Are you sure?' } , class: "btn btn-outline-danger"%>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete,
+                      data: { confirm: 'Are you sure?' } , class: "btn btn-outline-danger"%>
 
         <% else %>
           <button type="button" class="btn btn-primary me-3">
             <%= link_to 'Sign Up', new_user_registration_path,  style: 'color:#FFFFFF;', class: 'text-decoration-none' %>
           </button>
-        <button type="button" class="btn btn-primary me-3">
-          <%= link_to 'Log In', new_user_session_path, style: 'color:#FFFFFF;', class: 'text-decoration-none' %>
-        </button>
+          <button type="button" class="btn btn-primary me-3">
+            <%= link_to 'Log In', new_user_session_path, style: 'color:#FFFFFF;', class: 'text-decoration-none' %>
+          </button>
         <% end %>
       </div>
     </div>
