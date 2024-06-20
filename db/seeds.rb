@@ -1,41 +1,47 @@
 # frozen_string_literal: true
 
-User.create!(email: 'user@example.com', password: '12345678', password_confirmation: '12345678')
+User.create!(email: 'user@example.com', password: '123456', password_confirmation: '123456')
 p "Created #{User.count} users"
 expenses_list = [
-  'food',
-  'transport',
-  'closes',
-  'mobile phone',
-  'technic',
-  'presents',
-  'cosmetic',
-  'public services'
+  'Groceries',
+  'Medicines',
+  'Clothing',
+  'Transport',
+  'Housing payment',
+  'HU',
+  'Taxes',
+  'Cafes',
+  'Phone',
+  'Loan'
 ]
-Expence.destroy_all
 expenses_list.each do |name|
-  Expence.create(name: name,
+  Expence.create(name:,
                  description: name,
                  user_id: 1,
                  predefined: true)
 end
 
-p "Created #{Expence.count} expences"
+p "Created #{Expence.count} expenses"
 
-incomes_list = %w[
-  salary
-  cashback
-  gifts
-  dividents
+incomes_list = [
+  'Salary',
+  'Investments',
+  'Pensions',
+  'Cashback',
+  'Gifts',
+  'Deposits',
+  'Crypto',
+  'Self-employed',
+  'Real Estate',
+  'Sales'
 ]
-Income.destroy_all
 incomes_list.each do |name|
-  Income.create(name: name,
+  Income.create(name:,
                 description: name,
                 user_id: 1,
                 predefined: true)
 end
 p "Created #{Income.count} incomes"
 
-AdminUser.create!(email: 'admin@example.com', password: '12345678', password_confirmation: '12345678')
+AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456')
 p "Created #{AdminUser.count} admins"
