@@ -75,8 +75,13 @@
     <li class="nav-item">
       <a class="nav-link" <%= link_to 'Invite families member', current_user %></a>
     </li>
+    <% else %>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to 'Family', current_user %></a>
+      </li>
     <% end %>
-    <!-- Divider -->
+
+      <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Sidebar Toggler (Sidebar) -->
